@@ -1,0 +1,14 @@
+<div class="detail-section">
+    <div class="container-fluid">
+        <img src="{{ book.imageUrl }}" class="detail-img">
+        <h3>{{book.name}}</h3>
+        <div class="price">{{ book.unitPrice | currency:'BRL'}}</div>
+        <a href="#" class="primary-btn"> Adicionar ao carrinho</a>
+
+        <hr>
+        <h4>Descrição</h4>
+        <p>{{book.description}}</p>
+
+        <a routerLink="/books" class="mt-5">Voltar para Lista</a>
+    </div>
+</div>
