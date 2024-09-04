@@ -10,6 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookCategoryMenuComponent } from './components/book-category-menu/book-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const routes: Routes = [
   {path: 'books/:id', component: BookDetailsComponent},
@@ -32,7 +34,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [provideHttpClient(), BookService],
   bootstrap: [AppComponent]

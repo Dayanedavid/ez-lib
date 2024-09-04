@@ -1,10 +1,10 @@
 <div class="detail-section">
     <div class="container-fluid">
         <img src="{{ book.imageUrl }}" class="detail-img">
-        <h3>{{book.name}}</h3>
-        <div class="price">{{ book.unitPrice | currency:'BRL'}}</div>
+        <h2>{{book.name}}</h2>
+        <h3>{{book.author}}</h3>
+        <div class="price">{{ book.price | currency:'BRL'}}</div>
         <a href="#" class="primary-btn"> Adicionar ao carrinho</a>
-
         <hr>
         <h4>Descrição</h4>
         <p>{{book.description}}</p>

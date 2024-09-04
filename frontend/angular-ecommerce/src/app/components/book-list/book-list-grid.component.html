@@ -14,7 +14,7 @@
                             <h1>{{item.name}}</h1>
                         </a>
 
-                        <div class="price">{{item.unitPrice | currency:'BRL'}}</div>
+                        <div class="price">{{item.price | currency:'BRL'}}</div>
                         <a href="#" class="primary-btn">Adicionar ao carrinho</a>
                     </div>
                 </div>
@@ -23,6 +23,28 @@
                     Nenhum livro encontrado.
                 </div>
             </div>
+
+            <div class="footer-pagination">
+                <div class="row">
+
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-9" style="padding-left: 30%">
+                                <ngb-pagination [(page)]="pageNumber"
+                                                [pageSize]="pageSize"
+                                                [collectionSize]="totalElements"
+                                                (pageChange)="listBooks()">
+
+                                </ngb-pagination>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>    
+            </div>
+
         </div>    
     </div>
 </div>

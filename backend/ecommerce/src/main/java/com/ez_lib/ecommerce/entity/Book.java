@@ -1,6 +1,7 @@
 package com.ez_lib.ecommerce.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,27 +18,17 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String sku;
-
     private String name;
 
-    private String description;
+    private String author;
 
-    @Column(name = "unit_price")
-    private BigDecimal unitPrice;
+    private String description;
 
     @Column(name = "image_url")
     private String imageUrl;
 
-    private boolean active;
-
-    @Column(name = "date_created")
-    @CreationTimestamp
-    private Date dateCreated;
-
-    @Column(name = "last_updated")
-    @UpdateTimestamp
-    private Date lastUpdated;
+    @Column(name = "price")
+    private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)

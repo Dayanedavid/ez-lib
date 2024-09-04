@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BookCategory } from '../../commom/book-category';
+import { BookCategory } from '../../common/book-category';
 import { BookService } from '../../services/book.service';
 
 @Component({

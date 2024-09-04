@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Book } from '../../commom/book';
+import { Book } from '../../common/book';
 import { BookService } from '../../services/book.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,11 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './book-list-grid.component.html',
   styleUrl: './book-list.component.css'
 })
-export class BookListComponent {
+export class BookListComponent{
 
   books: Book[] = [];
-  currentCategoryId: number | undefined;
+  currentCategoryId: number = 1;
+  previousCategoryId: number = 1;
   searchMode: boolean = false;
+
+  pageNumber: number = 1;
+  pageSize: number = 15;
+  totalElements: number = 0;
 
   constructor(private bookService: BookService,
               private route: ActivatedRoute ){}
@@ -52,15 +57,24 @@ export class BookListComponent {
     if(hasCategoryId){
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
     } else {
-      this.currentCategoryId =1;
+      this.currentCategoryId = 0;
     }
 
-    this.bookService.getBookList(this.currentCategoryId).subscribe(
-      data => {
-        this.books = data;
-      }
-    )
+    if(this.previousCategoryId != this.currentCategoryId){
+      this.pageNumber=1;
+    }
 
+    this.previousCategoryId = this.currentCategoryId;
+
+    this.bookService.getBookListPaginate(this.pageNumber-1, this.pageSize, this.currentCategoryId)
+    .subscribe(
+      data => {
+        this.books = data._embedded.books;
+        this.pageNumber = data.page.number + 1;
+        this.pageSize = data.page.size;
+        this.totalElements = data.page.totalElements;
+      }
+    );
   }
 
 }
