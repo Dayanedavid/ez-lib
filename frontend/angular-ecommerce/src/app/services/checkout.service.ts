@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CheckoutService {
 
-  private url = "http://localhost:8080/api/checkout/purchase";
+  private url = "https://ezlib.onrender.com/api/checkout/purchase";
 
   constructor(private httpCllient: HttpClient) { }
 

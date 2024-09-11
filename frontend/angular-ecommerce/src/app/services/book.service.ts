@@ -10,9 +10,9 @@ import { BookCategory } from '../common/book-category';
 })
 export class BookService {
 
-  private baseUrl = 'http://localhost:8080/api/books';
+  private baseUrl = 'https://ezlib.onrender.com/api/books';
 
-  private categoryUrl = 'http://localhost:8080/api/book-category';
+  private categoryUrl = 'https://ezlib.onrender.com/api/book-category';
 
   constructor(private httpClient: HttpClient) { }
 
