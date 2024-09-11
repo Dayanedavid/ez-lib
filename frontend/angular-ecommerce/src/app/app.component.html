@@ -1,17 +1,9 @@
 <div class="page-wrapper">
 
     <!-- MENU SIDEBAR-->
-    <aside class="menu-sidebar d-none d-lg-block">
-        <div class="logo">
-            <a href="#">
-                <img src="assets/images/logo.png" alt="ez-lib" class="img-responsive">
-            </a>
-        </div>
-
+    
         <app-book-category-menu></app-book-category-menu>
-        
-    </aside>
-   
+           
     <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
@@ -24,12 +16,8 @@
 							
 							<app-search></app-search>
 						
-							<div class="cart-area d-n">
-								<a href="shopping-detail.html">
-									<div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i>
-								</a>
-							</div>
+							<app-cart-status></app-cart-status>
+                            
 						</div>
 						<div class="account-wrap"></div>
 					</div>
@@ -44,10 +32,10 @@
 </div>    
 
 <!-- END PAGE CONTAINER-->
-<footer>
+<!-- <footer>
     <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contatos</a></li>
         <li><a href="#">Help</a></li>
     </ul>
-</footer>
+</footer> -->

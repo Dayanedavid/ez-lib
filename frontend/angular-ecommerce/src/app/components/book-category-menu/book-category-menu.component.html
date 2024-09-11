@@ -1,14 +1,24 @@
-<div class="menu-sidebar-content js-scrollbar1">
-    <nav class="navbar-sidebar">
-        <h2>Genêros</h2>
-        <ul class="list-unstyled navbar-list">
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a routerLink="/books">
+            <img src="assets/images/logo.png" alt="ez-lib" class="img-responsive">
+        </a>
+    </div>
 
-            <li *ngFor="let tempBookCategory of bookCategories">
-                <a routerLink="/category/{{tempBookCategory.id}}" routerLinkActive="active-link">
-                    {{tempBookCategory.categoryName}}
-                </a>
-            </li>
 
-        </ul>
-    </nav>
-</div>
+    <div class="menu-sidebar-content js-scrollbar1">
+
+        <nav class="navbar-sidebar">
+            <h2>Genêros</h2>
+            <ul class="list-unstyled navbar-list">
+
+                <li *ngFor="let tempBookCategory of bookCategories">
+                    <a routerLink="/category/{{tempBookCategory.id}}" routerLinkActive="active-link">
+                        {{tempBookCategory.categoryName}}
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</aside>

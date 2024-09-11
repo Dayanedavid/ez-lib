@@ -41,15 +41,15 @@ export class BookService {
     }
   }
 
-  searchBooks(theKeyword: string): Observable<Book[]> {
 
-    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
+  searchBooksPaginate(thePage: number, 
+    thePageSize: number, 
+    theKeyword: string): Observable<GetResponseBooks> {
 
-     return this.getBooks(searchUrl);
-  }
+    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`
+    + `&page=${thePage}&size=${thePageSize}`;
+    return this.httpClient.get<GetResponseBooks>(searchUrl);
 
-  private getBooks(searchUrl: string): Observable<Book[]> {
-    return this.httpClient.get<GetResponseBooks>(searchUrl).pipe(map(response => response._embedded.books));
   }
 
   getBookCategories(): Observable<BookCategory[]> {

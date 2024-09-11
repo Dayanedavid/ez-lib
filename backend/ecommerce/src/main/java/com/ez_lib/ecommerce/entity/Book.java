@@ -3,6 +3,8 @@ package com.ez_lib.ecommerce.entity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,7 +13,8 @@ import java.util.Date;
 
 @Entity
 @Table
-@Data
+@Getter
+@Setter
 public class Book {
 
     @Id
@@ -31,6 +34,7 @@ public class Book {
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = true)
     private BookCategory category;
+
 }

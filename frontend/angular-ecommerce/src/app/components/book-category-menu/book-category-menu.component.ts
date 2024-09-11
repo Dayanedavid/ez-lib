@@ -20,7 +20,6 @@ export class BookCategoryMenuComponent {
   listBookCategories() {
     this.bookService.getBookCategories().subscribe(
       data => {
-        console.log('Book Categories=' + JSON.stringify(data))
         this.bookCategories = data;
       }
     );

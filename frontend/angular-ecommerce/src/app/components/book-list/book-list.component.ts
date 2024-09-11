@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Book } from '../../common/book';
 import { BookService } from '../../services/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartItem } from '../../common/cart-item';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-book-list',
@@ -15,12 +17,15 @@ export class BookListComponent{
   previousCategoryId: number = 1;
   searchMode: boolean = false;
 
+  previousKey: string= "";
   pageNumber: number = 1;
-  pageSize: number = 15;
+  pageSize: number = 20;
   totalElements: number = 0;
 
+
   constructor(private bookService: BookService,
-              private route: ActivatedRoute ){}
+              private route: ActivatedRoute,
+              private cartService: CartService ){}
 
   ngOnInit(){
     this.route.paramMap.subscribe(() => {
@@ -43,13 +48,18 @@ export class BookListComponent{
   handleSearchBooks() {
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
 
-    this.bookService.searchBooks(theKeyword).subscribe(
-      data => {
-        this.books = data;
-      }
-    )
+    if(this.previousKey != theKeyword){
+      this.pageNumber = 1;
+    }
+
+    this.previousKey = theKeyword;
+
+
+    this.bookService.searchBooksPaginate(this.pageNumber-1, this.pageSize, this.previousKey)
+    .subscribe(this.processResult());
 
   }
+
 
   handleListBooks(){
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
@@ -67,14 +77,22 @@ export class BookListComponent{
     this.previousCategoryId = this.currentCategoryId;
 
     this.bookService.getBookListPaginate(this.pageNumber-1, this.pageSize, this.currentCategoryId)
-    .subscribe(
-      data => {
-        this.books = data._embedded.books;
+    .subscribe(this.processResult());
+  }
+
+  processResult(){
+    return (data:any) =>{
+      this.books = data._embedded.books;
         this.pageNumber = data.page.number + 1;
         this.pageSize = data.page.size;
         this.totalElements = data.page.totalElements;
-      }
-    );
+    }
+  }
+
+  addToCart(book: Book){
+    const cartItem = new CartItem(book.id!, book.name!, book.imageUrl!, book.author, book.price!);
+
+    this.cartService.addToCart(cartItem);
   }
 
 }

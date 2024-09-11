@@ -1,0 +1,31 @@
+ .price {
+    margin: 24px 0 0;
+    font-weight: 800;
+    color: #0da8e4;
+    padding-bottom: 20px;
+}
+
+.detail-section {
+    margin-top: 60px;
+    /* text-align: center; */
+}
+
+.detail-img {
+    width: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+}
+
+
+.description p{
+    padding-left: 30%;
+    padding-right: 30%;
+    text-align: justify;
+    
+}
+
+
+.mt-5{
+    padding-left: 100px;
+}

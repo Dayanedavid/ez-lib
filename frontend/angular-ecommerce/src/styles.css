@@ -1,8 +1,3 @@
-/* 
- * ----------------------------
- * Common CSS
- * ----------------------------
- */
 
 * {
     margin: 0;
@@ -116,18 +111,19 @@ a:hover {
 
 .page-wrapper {
     overflow: hidden;
-    background: #e5e5e5;
+    background: #e1eff6;
     padding-bottom: 8vh
 }
 
 .page-container {
-    background: #e5e5e5;
+    background: #e1eff6;
     padding-left: 200px
 }
 
 .main-content {
     padding-top: 116px;
     min-height: 100vh
+    
 }
 
 aside.menu-sidebar.d-none.d-lg-block.clr {
@@ -137,6 +133,10 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
     box-shadow: -2px 0 4px #0000003b
 }
 
+.container-fluid{
+    text-align: center;
+}
+
 /* 
  * ----------------------------
  * Header Desktop Section
@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
  */
 
 .header-desktop {
-    background: #0da8e4;
+    background: #fff;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -255,12 +255,12 @@ input.au-input.au-input-xl {
     font-size: 22px;
     float: left;
     margin-top: 16px;
-    color: #fff;
+    color: #0da8e4;
     margin-left: 15px
 }
 
 .total {
-    background: #205b8d;
+    background: #0da8e4;
     line-height: 43px;
     color: #fff;
     border-radius: 30px;
@@ -293,15 +293,15 @@ input.au-input.au-input-xl {
     right: 0;
     min-width: 95px;
     color: #fff;
-    border: 1px solid #205b8d;
+    border: 1px solid #0da8e4;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 43px;
-    background: #205b8d
+    background: #0da8e4
 }
 
 .au-btn-submit:hover {
-    background: #05143f
+    background: #072c3a
 }
 
 .au-btn-submit>i {
@@ -317,24 +317,105 @@ input.au-input.au-input-xl {
     transform: translate(-50%, -50%)
 }
 
+
+
+
+/* 
+ * ----------------------------
+ * Buttons
+ * ----------------------------
+ */
+
+.btn-info {
+    color: #fff;
+    background-color: #0da8e4 !important;
+    border-color: #0da8e4 !important
+}
+
+a.primary-btn {
+    background: #05143f;
+    padding: 7px 20px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 5px
+}
+
+a.primary-btn:hover {
+    background: #0da8e4;
+    color: #fff
+}
+
+.active-link {
+    font-weight: bold;
+}
+
+
+
+/* 
+ * ----------------------------
+ * Footer section
+ * ----------------------------
+ */
+
+footer ul li a {
+    color: #fff
+}
+
+footer {
+    background: #232324;
+    z-index: 1;
+    position: relative;
+    text-align: center
+}
+
+footer li a {
+    color: #313131;
+    font-weight: 500
+}
+
+footer ul li {
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 20px
+}
+
+
+/* header */
+
+
 /* 
  * ----------------------------
  * Left Menu Bar
  * ----------------------------
  */
 
-.menu-sidebar {
+ .menu-sidebar {
     width: 200px;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     background: #fff;
-    overflow-y: auto
+    overflow-y: auto;
 }
+
+
+.logo{
+    justify-content: center;
+}
+
+.logo img{
+    height: 75px;
+}
+ 
 
 .menu-sidebar .logo {
     background: #fff;
+    align-items: center;
+    text-align: center;
     height: 75px;
     padding: 0 35px;
     display: -webkit-box;
@@ -352,7 +433,9 @@ input.au-input.au-input-xl {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
     border-right: 1px solid #e5e5e5;
     position: relative;
-    z-index: 3
+    z-index: 3;
+    align-items: center;
+
 }
 
 .menu-sidebar .navbar-list .navbar-sub-list {
@@ -380,7 +463,9 @@ input.au-input.au-input-xl {
     display: block;
     color: #555;
     font-size: 16px;
-    padding: 5px 0
+    padding: 5px 0;
+    text-decoration:none; 
+
 }
 
 .navbar-sidebar .navbar-list li a i {
@@ -388,7 +473,8 @@ input.au-input.au-input-xl {
 }
 
 .navbar-sidebar .navbar-list li a:hover {
-    color: #0da8e4
+    color: #0da8e4;
+    padding-left: 5px;
 }
 
 /* 
@@ -409,7 +495,7 @@ input.au-input.au-input-xl {
     background: #fff;
 }
 
-.header-mobile .header-mobile-inner {
+.header-mobile .header-mobile-inner{
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -547,307 +633,12 @@ input.au-input.au-input-xl {
 }
 
 .main-content.page-m {
-    padding: 10% 15% !important
+    padding: 10% 30% 10% 5%
 }
 
-/* 
- * ----------------------------
- * Products List
- * ----------------------------
- */
 
-.product-box img {
-    width: 150px;
-}
 
-.items select {
-    width: 100px;
-    height: 40px;
-    border-radius: 40px;
-    padding-left: 15px;
-    margin-bottom: 10px;
-    outline: 0;
-    margin-left: 5px;
-}
 
-.product-box {
-    margin-bottom: 60px
-}
-
-.price {
-    margin: 15px 0 0;
-    font-weight: 800;
-    color: #0da8e4
-}
-
-.product-box h1 {
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    font-weight: 600;
-    padding-top: 12px;
-    margin-bottom: 7px
-}
-
-.product-box h2 {
-    font-size: 15px;
-    padding-bottom: 0;
-    font-weight: 500;
-    color: #585858
-}
-
-/* 
- * ----------------------------
- * Shopping Cart Checkout
- * ----------------------------
- */
-
-.form-area {
-    background: #e5e5e5;
-    position: relative;
-    margin-bottom: 45px;
-    padding: 50px 20px;
-    border: 3px solid #ccc
-}
-
-.form-area h3 {
-    position: absolute;
-    top: -26px;
-    left: 13px;
-    background: #e5e5e5;
-    padding: 10px 20px;
-    font-weight: 500;
-    z-index: 23;
-    display: inline-block
-}
-
-.input-space {
-    margin-bottom: 20px
-}
-
-.input-space label {
-    padding-left: 31px;
-    font-size: 14px;
-    margin-bottom: 50px
-}
-
-.input-space input[type=text] {
-    width: 100%;
-    height: 40px;
-    border-radius: 30px;
-    outline: 0;
-    padding: 10px;
-    border: 1px solid #ccc
-}
-
-.input-space select {
-    width: 100%;
-    height: 40px;
-    border-radius: 30px;
-    outline: 0;
-    padding: 0 10px;
-    border: 1px solid #ccc
-}
-
-.au-checkbox {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
-
-.au-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer
-}
-
-.au-checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    background-color: #fff !important;
-    border: 2px solid #e5e5e5;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px
-}
-
-.au-checkbox:hover input~.au-checkmark {
-    background-color: transparent
-}
-
-.au-checkbox input:checked~.au-checkmark {
-    background-color: #fff
-}
-
-.au-checkmark:after {
-    content: "";
-    position: absolute;
-    display: none
-}
-
-.au-checkbox input:checked~.au-checkmark:after {
-    display: block
-}
-
-label.date {
-    padding-top: 8px
-}
-
-.au-checkbox .au-checkmark:after {
-    left: 5px;
-    top: -1px;
-    width: 9px;
-    height: 15px;
-    border: solid #0da8e4;
-    border-width: 0 4px 4px 0;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-
-option:first {
-    color: #ccc
-}
-
-select {
-    color: #828482
-}
-
-/* 
- * ----------------------------
- * Shopping Cart Details
- * ----------------------------
- */
-
-.table {
-    margin: 0
-}
-
-table.table.table-bordered {
-    border: 1px solid #ccc;
-    background: #fff
-}
-
-.table-bordered td,
-.table-bordered th {
-    border: 1px solid #dee2e6
-}
-
-table.table.table-bordered th {
-    BACKGROUND: #0da8e4;
-    color: #fff;
-    font-size: 14px;
-    padding: 7px
-}
-
-.table-responsive {
-    padding-right: 1px
-}
-
-.items select {
-    width: 100px;
-    height: 40px;
-    border-radius: 40px;
-    padding-left: 15px;
-    margin-bottom: 10px;
-    outline: 0;
-    margin-left: 5px
-}
-
-/* 
- * ----------------------------
- * Product Details
- * ----------------------------
- */
-
-.price {
-    margin: 15px 0 0;
-    font-weight: 800;
-    color: #0da8e4
-}
-
-.detail-section {
-    margin-top: 60px
-}
-
-.detail-img {
-    width: 30%;
-}
-
-/**/
-
-/* 
- * ----------------------------
- * Buttons
- * ----------------------------
- */
-
-.btn-info {
-    color: #fff;
-    background-color: #0da8e4 !important;
-    border-color: #0da8e4 !important
-}
-
-a.primary-btn {
-    background: #05143f;
-    padding: 7px 20px;
-    text-align: center;
-    display: inline-block;
-    color: #fff;
-    border-radius: 2px;
-    font-size: 14px;
-    margin-top: 5px
-}
-
-a.primary-btn:hover {
-    background: #0da8e4;
-    color: #fff
-}
-
-.active-link {
-    font-weight: bold;
-}
-
-/* 
- * ----------------------------
- * Footer section
- * ----------------------------
- */
-
-footer ul li a {
-    color: #fff
-}
-
-footer {
-    background: #232324;
-    z-index: 1;
-    position: relative;
-    text-align: center
-}
-
-footer li a {
-    color: #313131;
-    font-weight: 500
-}
-
-footer ul li {
-    display: inline-block;
-    font-size: 14px;
-    padding: 10px 20px
-}
 
 /* 
  * ----------------------------
@@ -855,7 +646,7 @@ footer ul li {
  * ----------------------------
  */
 
-@media (max-width:1600px) {
+ @media (max-width:1600px) {
     .au-input-xl {
         min-width: 290px
     }
@@ -1059,8 +850,9 @@ footer ul li {
         height: 80px
     }
 
-    a.logo img {
-        width: 110px
+    .logo img {
+        width: 200;
+        height: 200;
     }
 
     .cart-area i {
@@ -1096,6 +888,7 @@ footer ul li {
         border-radius: 0;
         background: #205b8d
     }
+
 
     input.au-input.au-input-xl {
         border-radius: 0 !important;
