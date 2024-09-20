@@ -14,10 +14,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { TeamComponent } from './components/team/team.component';
+import { QuestionsComponent } from './components/questions/questions.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-const routes: Routes = [  
+const routes: Routes = [
+  {path: 'team', component: TeamComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'questions', component: QuestionsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'books/:id', component: BookDetailsComponent},
@@ -38,7 +44,10 @@ const routes: Routes = [
     BookDetailsComponent,
     CartStatusComponent,
     CartDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ContactComponent,
+    TeamComponent,
+    QuestionsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

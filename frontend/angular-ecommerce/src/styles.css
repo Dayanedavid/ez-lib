@@ -360,6 +360,24 @@ a.primary-btn:hover {
  * ----------------------------
  */
 
+ .footer-desktop {
+  background: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 200px;
+  height: 50px;
+  z-index: 3
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #000;
+}
+
 footer ul li a {
     color: #fff
 }
