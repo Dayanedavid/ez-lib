@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a routerLink="/books">
+        <a routerLink="/ezlib/books">
             <img src="assets/images/logo.png" alt="ez-lib" class="img-responsive">
         </a>
     </div>
@@ -13,7 +13,7 @@
             <ul class="list-unstyled navbar-list">
 
                 <li *ngFor="let tempBookCategory of bookCategories">
-                    <a routerLink="/category/{{tempBookCategory.id}}" routerLinkActive="active-link">
+                    <a routerLink="/ezlib/category/{{tempBookCategory.id}}" routerLinkActive="active-link">
                         {{tempBookCategory.categoryName}}
                     </a>
                 </li>

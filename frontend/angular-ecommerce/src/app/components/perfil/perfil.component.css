@@ -1,0 +1,23 @@
+.order{
+justify-items: center;
+padding-top: 100px;
+
+}
+
+.borderItem{
+    border: 2px solid black; /* largura, estilo e cor */
+    padding: 25px;
+}
+
+.paddingcard{
+    padding-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+

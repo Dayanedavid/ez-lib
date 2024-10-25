@@ -1,0 +1,60 @@
+<div class="main-content page-m">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <div class="cardcontent">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">
+                            Edição de Perfil
+                        </h3>
+                    </div>
+                    <div class="card-body">
+
+                        <form #loginForm="ngForm" (submit)="onSubmit()">
+
+                            <div class="form-group">
+                                <label class="small">
+                                    Nome
+                                </label>
+                                <input type="text" name="name" [(ngModel)]="name" class="form-control py-4"
+                                    placeholder="Digite seu nome" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="small">
+                                    Senha
+                                </label>
+                                <input type="text" name="password" [(ngModel)]="password" class="form-control py-4"
+                                    placeholder="Digite sua senha" />
+                            </div>
+
+                            <div class="form-group">
+                                <button type="button"class="au-btn-submit butt"
+                                    (click)="editar()">
+                                    Editar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="order">
+                <h3 class="text-center titorder">
+                    Ordem de Compra
+                </h3>
+                <tr *ngFor="let item of orders" class="paddingcard">
+                    <td class="borderItem">
+                        <p>{{item.dateCreated || 'dd/MM/yyyy'}}</p>
+                        <p>{{item.orderTrackingNumber}}</p>
+                        <p>Preço Total: {{item.totalPrice}} | Quantidade Total: {{item.totalQuantity}}</p>
+                        
+                    </td>
+                </tr>
+            </div>
+            
+        
+        
+        </div>
+    </div>
+</div>

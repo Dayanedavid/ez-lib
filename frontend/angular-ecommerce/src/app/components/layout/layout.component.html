@@ -1,0 +1,57 @@
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    
+        <app-book-category-menu></app-book-category-menu>
+           
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							
+							<app-search></app-search>
+
+                            <app-login-status></app-login-status>
+						
+							<app-cart-status></app-cart-status>
+                            
+						</div>
+						<div class="account-wrap"></div>
+					</div>
+				</div>
+			</header>
+			<!-- END HEADER DESKTOP-->
+
+            <!--  MAIN CONTENT-->
+            <router-outlet></router-outlet>
+
+    </div>
+</div>    
+	<!-- FOOTER DESKTOP-->
+    <footer class="footer-desktop">
+        <div class="section-content section-content-p30">
+            <div class="container-fluid">
+                <div class="footer-wrap">
+      <a routerLink="/ezlib/contact" class="mt-1 footer-link">
+        Entre em contato
+      </a>
+      |
+      <a routerLink="/ezlib/team" class="mt-1 footer-link">
+        Sobre nós
+      </a>
+      |
+      <a routerLink="/ezlib/questions" class="mt-1 footer-link">
+        Perguntas Frequentes
+      </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER DESKTOP-->
+
+

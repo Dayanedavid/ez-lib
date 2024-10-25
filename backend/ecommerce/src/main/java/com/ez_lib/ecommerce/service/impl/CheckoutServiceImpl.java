@@ -33,7 +33,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         orderItems.forEach(item -> order.add(item));
 
 
-        Customer customer = purchase.getCustomer();
+        Customer customer = customerRepository.findByEmail(purchase.getCustomer()).orElseThrow();
         customer.add(order);
 
         customerRepository.save(customer);

@@ -6,11 +6,11 @@
                 <div *ngFor="let item of books" class="col-md-3">
                     <div class="product-box">
 
-                        <a routerLink="/books/{{ item.id }}">
+                        <a routerLink="/ezlib/books/{{ item.id }}">
                             <img src="{{item.imageUrl}}" class="img-responsive">
                         </a>
 
-                        <a routerLink="/books/{{ item.id }}">
+                        <a routerLink="/ezlib/books/{{ item.id }}">
                             <h1>{{item.name}}</h1>
                         </a>
 

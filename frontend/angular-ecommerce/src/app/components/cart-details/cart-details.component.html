@@ -37,7 +37,7 @@
                         <td style="font-weight: bold;">
                             <p>Total: {{totalPrice | currency: 'BRL'}}</p>
                             <div>
-                                <a routerLink="/checkout" class="btn btn-primary btn-sm mt-2">Finalizar Compra</a>
+                                <a  class="btn btn-primary btn-sm mt-2" (click)="onSubmit()">Finalizar Compra</a>
                             </div>
                         </td>
                     </tr>

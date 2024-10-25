@@ -1,0 +1,17 @@
+.card{
+    width: 30%;
+}
+
+.cardcontent{
+justify-items: center;
+}
+
+.form-group input{
+    height: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.butt{
+    margin: 15px;
+}

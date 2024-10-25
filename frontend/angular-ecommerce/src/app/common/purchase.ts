@@ -3,7 +3,7 @@ import { Order } from "./order";
 import { OrderItem } from "./order-item";
 
 export class Purchase {
-    customer!: Customer;
+    customer!: string | null;
     order!: Order;
     orderItems!: OrderItem[]; 
 }

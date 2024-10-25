@@ -17,22 +17,35 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TeamComponent } from './components/team/team.component';
 import { QuestionsComponent } from './components/questions/questions.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginStatusComponent } from './components/login-status/login-status.component';
+import { OrdersHistoryComponent } from './components/orders-history/orders-history.component';
+import { LibraryComponent } from './components/library/library.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 const routes: Routes = [
-  {path: 'team', component: TeamComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'questions', component: QuestionsComponent},
-  {path: 'checkout', component: CheckoutComponent},
-  {path: 'cart-details', component: CartDetailsComponent},
-  {path: 'books/:id', component: BookDetailsComponent},
-  {path: 'search/:keyword', component: BookListComponent},
-  {path: 'category/:id', component: BookListComponent},
-  {path: 'category', component: BookListComponent},
-  {path: 'books', component: BookListComponent},
-  {path: '', redirectTo: '/books', pathMatch: 'full'},
-  {path: '**', redirectTo: '/books', pathMatch: 'full'}
+  {path:'', component: LoginComponent},
+  { path: 'ezlib', component: LayoutComponent, children:[
+    {path: 'profile', component: PerfilComponent, canActivate: [AuthGuard]},
+    {path: 'library', component: LibraryComponent, canActivate: [AuthGuard]},
+    {path: 'orders', component: OrdersHistoryComponent, canActivate: [AuthGuard]},
+    {path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
+    {path: 'contact', component: ContactComponent, canActivate: [AuthGuard]},
+    {path: 'questions', component: QuestionsComponent, canActivate: [AuthGuard]},
+    {path: 'cart-details', component: CartDetailsComponent, canActivate: [AuthGuard]},
+    {path: 'books/:id', component: BookDetailsComponent,canActivate: [AuthGuard]},
+    {path: 'search/:keyword', component: BookListComponent, canActivate: [AuthGuard]},
+    {path: 'category/:id', component: BookListComponent, canActivate: [AuthGuard]},
+    {path: 'category', component: BookListComponent, canActivate: [AuthGuard]},
+    {path: 'books', component: BookListComponent,canActivate: [AuthGuard]},
+  ]},
+  // {path: '', redirectTo: '', pathMatch: 'full'},
+  // {path: '**', redirectTo: '', pathMatch: 'full'}
+  
 ];
 
 @NgModule({
@@ -48,11 +61,18 @@ const routes: Routes = [
     ContactComponent,
     TeamComponent,
     QuestionsComponent,
+    LoginComponent,
+    LayoutComponent,
+    LoginStatusComponent,
+    OrdersHistoryComponent,
+    LibraryComponent,
+    PerfilComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     ReactiveFormsModule
   ],

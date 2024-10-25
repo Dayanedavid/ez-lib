@@ -17,7 +17,7 @@ export class CartService {
   addToCart(theCartItem: CartItem) {
 
     let alreadyExistsInCart: boolean = false;
-    let existingCartItem: CartItem = new CartItem("", "", "", "", 0);
+    let existingCartItem: CartItem = new CartItem(0, "", "", "", 0);
 
     if (this.cartItems.length > 0) {
 

@@ -46,13 +46,9 @@ export class CheckoutComponent {
       orderItems[i] =  new OrderItem(cartIitems[i]);
     }
 
-    let orderItemShort: OrderItem[] = cartIitems.map(
-      item => new OrderItem(item)
-    );
-
     let purchase = new Purchase();
 
-    purchase.customer = this.checkoutGroup.controls['customer'].value;
+    purchase.customer = sessionStorage.getItem("email");
     purchase.order = order;
     purchase.orderItems = orderItems;
 
@@ -77,7 +73,7 @@ export class CheckoutComponent {
 
     this.checkoutGroup.reset();
 
-    this.router.navigateByUrl("/books");
+    this.router.navigateByUrl("ezlib/books");
   }
 
 
