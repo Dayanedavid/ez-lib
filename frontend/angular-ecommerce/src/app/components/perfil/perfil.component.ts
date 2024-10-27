@@ -27,7 +27,7 @@ export class PerfilComponent {
     private route: ActivatedRoute,
   ){}
 
-  private baseUrl = 'https://ezlib.onrender.com';
+  private baseUrl = 'https://ezlib.onrender.com/api/customers';
 
 
   editar(){
