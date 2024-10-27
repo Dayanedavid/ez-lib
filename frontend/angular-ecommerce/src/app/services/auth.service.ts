@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs';
 })
 export class AuthService {
 
-  apiUrl: string = "http://localhost:8080/auth"
+  apiUrl: string = "https://ezlib.onrender.com"
 
   constructor(private httpClient: HttpClient) { }
 

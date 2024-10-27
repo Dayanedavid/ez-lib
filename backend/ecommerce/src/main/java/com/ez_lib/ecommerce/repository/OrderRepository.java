@@ -4,7 +4,7 @@ import com.ez_lib.ecommerce.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("https://ez-lib.onrender.com")
 public interface OrderRepository extends JpaRepository <Order, Long> {
 
 }

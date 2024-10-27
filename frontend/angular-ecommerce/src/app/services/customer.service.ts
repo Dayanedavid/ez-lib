@@ -11,7 +11,7 @@ import { OrderResponse } from '../common/order-response';
 })
 export class CustomerService {
 
-  private baseUrl = 'http://localhost:8080/api/customers';
+  private baseUrl = 'https://ezlib.onrender.com/api/customers';
 
 
   constructor(private httpClient: HttpClient) { }
