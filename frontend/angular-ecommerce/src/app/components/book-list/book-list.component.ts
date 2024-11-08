@@ -13,6 +13,7 @@ import { CartService } from '../../services/cart.service';
 export class BookListComponent{
 
   books: Book[] = [];
+  
   currentCategoryId: number = 1;
   previousCategoryId: number = 1;
   searchMode: boolean = false;

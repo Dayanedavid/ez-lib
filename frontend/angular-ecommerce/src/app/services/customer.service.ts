@@ -19,15 +19,7 @@ export class CustomerService {
 
   salvar(name: string, email: string, password: string){
     return this.httpClient.put<Customer>(this.baseUrl + "/register", { email, password, name })
-    // .pipe(
-    //   map((response: LoginResponse) => {
-    //     return {
-    //       token: response.token,
-    //       name: response.name,
-    //       email: response.email
-    //     };
-    //   })
-    // )
+
   }
 
   getOrders(customer: string | null): Observable<OrderResponse[]>{
