@@ -7,8 +7,8 @@ import { BookDTO } from '../common/book-dto';
   providedIn: 'root'
 })
 export class MyLibraryService {
-  
-  private baseUrl = 'http://localhost:8080/api/library';
+
+  private baseUrl = 'https://ezlib.onrender.com/api/library';
 
 
   constructor(private httpClient: HttpClient) { }

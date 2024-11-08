@@ -26,4 +26,6 @@ plataforma acessível e moderna que oferece aos usuários uma ampla seleção de
 ## Site
 - https://ez-lib.onrender.com/
 - Por ser uma hospedagem gratuita no Render, o back-end pode demorar alguns minutos até responder a primeira requisição.
-- O CORS pode impedir requisições de localhost para o back-end.
+- O CORS pode impedir requisições para o back-end. Substitua as URLs para realizar as requisições: 
+  - Back-end: substitua `https://ez-lib.onrender.com` por `http://localhost:4200`
+  - Front-end: substitua `https://ezlib.onrender.com` por `http://localhost:8080`
