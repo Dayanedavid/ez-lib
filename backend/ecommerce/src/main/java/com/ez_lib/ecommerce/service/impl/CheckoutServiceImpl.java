@@ -5,12 +5,16 @@ import com.ez_lib.ecommerce.dto.PurchaseResponse;
 import com.ez_lib.ecommerce.entity.Customer;
 import com.ez_lib.ecommerce.entity.Order;
 import com.ez_lib.ecommerce.entity.OrderItem;
+import com.ez_lib.ecommerce.entity.UserBook;
 import com.ez_lib.ecommerce.repository.CustomerRepository;
+import com.ez_lib.ecommerce.repository.UserBookRepository;
 import com.ez_lib.ecommerce.service.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -19,6 +23,9 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private UserBookRepository userBookRepository;
 
     @Override
     @Transactional
@@ -37,6 +44,17 @@ public class CheckoutServiceImpl implements CheckoutService {
         customer.add(order);
 
         customerRepository.save(customer);
+
+        List<UserBook> userBooks = new ArrayList<>();
+
+        for(OrderItem orderItem : orderItems){
+            UserBook userBook = new UserBook();
+            userBook.setCustomerId(customer.getId());
+            userBook.setBookId(orderItem.getBookId());
+            userBooks.add(userBook);
+        }
+
+        userBooks.forEach(i -> userBookRepository.save(i));
 
         return new PurchaseResponse(orderTrackingNumber);
     }

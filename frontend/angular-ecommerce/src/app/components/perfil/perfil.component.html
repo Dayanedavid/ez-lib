@@ -41,11 +41,11 @@
             </div>
             <div class="order">
                 <h3 class="text-center titorder">
-                    Ordem de Compra
+                    Histórico de Pedidos
                 </h3>
                 <tr *ngFor="let item of orders" class="paddingcard">
                     <td class="borderItem">
-                        <p>{{item.dateCreated || 'dd/MM/yyyy'}}</p>
+                        <p>{{item.dateCreated | date: 'dd/MM/yyyy HH:mm'}}</p>
                         <p>{{item.orderTrackingNumber}}</p>
                         <p>Preço Total: {{item.totalPrice}} | Quantidade Total: {{item.totalQuantity}}</p>
                         

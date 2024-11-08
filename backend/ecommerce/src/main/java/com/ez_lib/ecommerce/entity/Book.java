@@ -37,4 +37,5 @@ public class Book {
     @JoinColumn(name = "category_id", nullable = true)
     private BookCategory category;
 
+
 }
